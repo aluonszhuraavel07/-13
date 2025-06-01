@@ -3,8 +3,6 @@ from random import *
 from tkinter import messagebox
 
 a = []
-
-# 🔹 Заповнення масиву випадковими числами
 def mas():
     n = edit1.get()
     if not n:
@@ -19,7 +17,7 @@ def mas():
         a.append(randint(-50, 50))
         listbox1.insert(END, a[i])
 
-# 🔹 Сортування за спаданням методом обміну
+#  Сортування за спаданням методом обміну
 def sort():
     n = len(a)
     for j in range(n - 1):
@@ -30,12 +28,12 @@ def sort():
     for i in range(n):
         listbox2.insert(END, a[i])
 
-# 🔹 Обчислення суми
+#  Обчислення суми
 def compute_sum():
     s = sum(a)
     label4['text'] = 'sum = ' + str(s)
 
-# 🔹 Подвоїти всі кратні 4
+#  Подвоїти всі кратні 4
 def double_multiples_of_four():
     for i in range(len(a)):
         if a[i] % 4 == 0:
@@ -44,17 +42,17 @@ def double_multiples_of_four():
     for value in a:
         listbox1.insert(END, value)
 
-# 🔹 Про автора
+#  Про автора
 def about_author():
     messagebox.showinfo('Про автора', 'Автор: Журавель Альона\nEmail: zuravelalona3@gmail.com')
 
-# 🔹 Умова задачі
+#  Умова задачі
 def problem_statement():
     messagebox.showinfo('Умова задачі',
         'Збільшити вдвічі всі елементи одновимірного масиву, кратні 4.\n'
         'Після цього виконати сортування за спаданням методом обміну.')
 
-# 🔹 Теми оформлення
+#  Теми оформлення
 def set_light_theme():
     root['bg'] = 'lightgray'
     listbox1['bg'] = 'white'
@@ -82,13 +80,13 @@ def set_default_theme():
         label['fg'] = 'black'
     edit1['bg'] = '#FFFFFF'
 
-# 🔹 Контекстне меню
+#  Контекстне меню
 x = y = 0
 def do_popup(event):
     global x, y
     x = event.x
     y = event.y
-    popupmenu.post(event.x_root, event.y_root)  # ✅ повністю закрита дужка
+    popupmenu.post(event.x_root, event.y_root)  
 
 root = Tk()
 root.title('Масиви')
